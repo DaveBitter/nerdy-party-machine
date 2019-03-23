@@ -1,0 +1,24 @@
+/* COLORS */
+$color-primary: #56cc71;
+$color-primary-dark: darken(#56cc71, 5%);
+$color-primary-light: lighten(#56cc71, 5%);
+
+/* COLOR GRAY */
+$color-white: #fff;
+$color-black: #39393a;
+
+$color-gray-dark: #58636e;
+$color-gray: #8d9297;
+$color-gray-light: #bfc3c7;
+$color-gray-lighter: #e4e5e7;
+$color-gray-lightest: #f4f5f5;
+
+/* COLOR BASE */
+$color-base: #2f2f2f;
+
+$color-base-darker: darken($color-base, 10%);
+$color-base-dark: darken($color-base, 5%);
+
+$color-base-light: lighten($color-base, 5%);
+$color-base-lighter: lighten($color-base, 10%);
+$color-base-lightest: lighten($color-base, 15%);

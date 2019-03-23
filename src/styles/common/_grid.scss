@@ -1,0 +1,37 @@
+
+.grid {
+    padding: 0 $spacing-med;
+
+    .g2,
+    .g4,
+    .g6 {
+        grid-column: main-inner-start / main-inner-end;
+    }
+
+    .g0 {
+        grid-column: main-start / main-end;
+    }
+
+    @include mq($mq-tab--sml) {
+        display: grid;
+        grid-gap: $spacing-med $spacing-sml;
+        grid-template-columns: [main-start] 1fr [main-inner-start] 1fr [content-start] 1fr [body-start] 6fr [body-end] 1fr [content-end] 1fr [main-inner-end] 1fr [main-end];
+        padding: 0;
+
+        .g0 {
+            grid-column: main-start / main-end;
+        }
+
+        .g2 {
+            grid-column: main-inner-start / main-inner-end;
+        }
+
+        .g4 {
+            grid-column: content-start / content-end;
+        }
+
+        .g6 {
+            grid-column: body-start / body-end;
+        }
+    }
+}

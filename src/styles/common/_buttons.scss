@@ -1,0 +1,61 @@
+$button-height: $spacing-lrg;
+$button-width: $spacing-xxxl;
+
+.button {
+    height: $button-height;
+    min-width: $button-width;
+    border: none;
+    border-radius: $border-radius-sml;
+    background-color: $color-base-lighter;
+    color: $color-white;
+    cursor: pointer;
+    transition: background-color $transition-timing-fast $transition-easing-cubic;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    &:hover,
+    &:focus {
+        &:not(:disabled) {
+            background-color: $color-base-light;
+        }
+    }
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:hover,
+        &:focus {
+            &:not(:disabled) {
+                background-color: $color-primary-dark;
+            }
+        }
+    }
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+
+    @include mq($mq-tab--sml) {
+        flex-direction: row;
+    }
+
+    .button {
+        @include mq($mq-tab--sml) {
+            flex: 1;
+        }
+
+        + .button {
+            margin-top: $spacing-med;
+
+            @include mq($mq-tab--sml) {
+                margin-top: 0;
+                margin-left: $spacing-med;
+            }
+        }
+    }
+}

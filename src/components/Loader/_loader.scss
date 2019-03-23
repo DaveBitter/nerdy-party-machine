@@ -1,0 +1,24 @@
+@keyframes rotation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    &__spinner {
+        height: $spacing-xl;
+        width: $spacing-xl;
+        margin: auto;
+        border: 1px solid $color-gray-lighter;
+        border-top-color: $color-primary;
+        border-radius: 50%;
+        animation: rotation $transition-timing-slowest infinite linear;
+    }
+}

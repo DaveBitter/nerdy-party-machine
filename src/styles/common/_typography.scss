@@ -1,0 +1,148 @@
+// Falbacks
+
+@mixin font-regular {
+    font-family: 'Brando Sans','Book Antiqua',Palatino,'Palatino Linotype','Palatino LT STD',Georgia,serif;
+}
+
+@mixin text {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+@mixin text-link {
+    font-style: italic;
+    font-size: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@mixin text-xxl {
+    font-size: 48px;
+}
+
+@mixin text-xl {
+    font-size: 36px;
+}
+
+@mixin text-l {
+    font-size: 24px;
+}
+
+@mixin text-m {
+    font-size: 18px;
+}
+
+@mixin text-s {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@mixin text-xs {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@mixin text-xxs {
+    font-size: 12px;
+}
+
+@mixin heading($size) {
+    font-size: map-get((
+        h1: 72px,
+        h2: 40px,
+        h3: 40px,
+        h4: 24px,
+        h5: 20px,
+        h6: 18px
+    ), $size);
+    line-height: map-get((
+        h1: 1.2,
+        h2: 1.2,
+        h3: 1.2,
+        h4: 1.2,
+        h5: 1.2,
+        h6: 1.2
+    ), $size);
+    color: $color-white;
+    font-weight: normal;
+    font-feature-settings: 'lnum';
+}
+
+// Elements
+
+body {
+    @include font-regular;
+    color: $color-white;
+}
+
+p {
+    @include text-s;
+}
+
+h1, .h1 {
+    @include heading(h1);
+    margin: 0;
+    margin-bottom: $spacing-xs;
+}
+
+h2, .h2 {
+    @include heading(h2);
+    margin: 0;
+    margin-bottom: $spacing-xs;
+}
+
+h3, .h3 {
+    @include heading(h3);
+    margin: 0;
+    margin-bottom: $spacing-xs;
+}
+
+h4, .h4 {
+    @include heading(h4);
+    margin: 0;
+    margin-bottom: $spacing-xs;
+}
+
+h5, .h5 {
+    @include heading(h5);
+    margin: 0;
+    margin-bottom: $spacing-xs;
+}
+
+h6, .h6 {
+    @include heading(h6);
+    margin: 0;
+    margin-bottom: $spacing-xs;
+}
+
+a, .btn-link {
+    color: $color-white;
+    transition: text-decoration-color $transition-timing-med $transition-easing-cubic;
+
+    &:hover {
+        text-decoration-color: $color-primary;
+    }
+}
+
+.copy {
+    &--faded {
+        color: $color-base-lightest;
+    }
+
+    &--primary {
+        color: $color-primary;
+    }
+}
+
+dl {
+    font-size: 95%;
+}
+
+.btn-link {
+    @include text-link();
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;
+}
