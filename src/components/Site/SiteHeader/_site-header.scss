@@ -1,0 +1,41 @@
+$site-header-height: $spacing-xxxl;
+$site-header-height-full: 40vh;
+
+.site-header {
+    height: $site-header-height;
+    padding: $spacing-med;
+
+    &--full {
+        height: $site-header-height-full;
+        margin-bottom: $spacing-med;
+    }
+
+    @include mq($mq-tab--lrg) {
+        padding: $spacing-med 0;
+    }
+
+    &__logo-wrapper {
+        position: relative;
+
+        a {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 0;
+        }
+    }
+
+    &__logo {
+        svg {
+            height: 100%;
+            max-height: $site-header-height;
+            transition: max-height $transition-timing-fast $transition-easing-cubic;
+
+            .site-header--full & {
+                max-height: $site-header-height-full;
+            }
+        }
+    }
+}
