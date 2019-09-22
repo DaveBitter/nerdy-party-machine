@@ -6,6 +6,8 @@ import { AppContext } from '../../static/js/utils/contexts/Context';
 
 
 // Components
+import GameScore from '../../components/GameScore/GameScore';
+import SumbitEntryForm from '../../components/Forms/SumbitEntryForm/SumbitEntryForm';
 
 // Component
 const Home = ({ match }) => {
@@ -17,6 +19,8 @@ const Home = ({ match }) => {
 
     return (
         <main className='game'>
+            <SumbitEntryForm />
+            <GameScore />
         </main>
     );
 };

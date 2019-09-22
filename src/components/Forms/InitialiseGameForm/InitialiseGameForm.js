@@ -16,7 +16,7 @@ const InitialiseGameForm = ({ history }) => {
     };
 
     return (
-        <form className='initilise-game-form form' onSubmit={handleSubmit}>
+        <form className='form' onSubmit={handleSubmit}>
             <Button label={`Let's start!`} theme='primary' type='submit' />
         </form>
     );

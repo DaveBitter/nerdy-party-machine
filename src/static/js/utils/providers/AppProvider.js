@@ -7,22 +7,31 @@ import UUID from 'uuid/v4';
 import { AppContext } from '../contexts/Context';
 
 // Component
+const initialGameData = { choices: [] };
 
 const initialState = {
-  gameData: {}
+  gameData: initialGameData
 };
 
 class AppProvider extends Component {
   state = {
     ...initialState,
+    handleGameChoice: this._handleGameChoice.bind(this),
     initGame: this._initGame.bind(this),
     setInitialGameData: this._setInitialGameData.bind(this)
   };
 
-  _setInitialGameData(uid) {
-    const initialGameDate = localStorage.getItem(`game:${uid}`);
+  _handleGameChoice(choice) {
+    const updatedGameData = { ...this.state.gameData, choices: [...this.state.gameData.choices, choice] };
+    this.setState({ gameData: updatedGameData });
 
-    this.setState({ gameData: initialGameDate });
+    localStorage.setItem(`game:${this.state.gameData.uid}`, JSON.stringify(updatedGameData));
+  }
+
+  _setInitialGameData(uid) {
+    const gameData = localStorage.getItem(`game:${uid}`);
+
+    this.setState({ gameData: { ...initialGameData, ...JSON.parse(gameData) } });
   }
 
   _initGame(history) {

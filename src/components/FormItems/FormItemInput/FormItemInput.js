@@ -7,11 +7,11 @@ import PropTypes from 'prop-types';
 // Components
 
 // Component
-const FormItemInput = ({ label }) => {
+const FormItemInput = ({ handleChange, label, value }) => {
     return (
         <div className='form__item'>
             {label && <label>{label}</label>}
-            <input className='form-item-input'>
+            <input className='form-item-input' value={value} onChange={({ target }) => handleChange(target.value)}>
             </input>
         </div>
     );
@@ -19,12 +19,16 @@ const FormItemInput = ({ label }) => {
 
 // Default props
 FormItemInput.defaultProps = {
+    handleChange: () => { },
+    value: ''
 };
 
-const { string } = PropTypes;
+const { func, string } = PropTypes;
 
 FormItemInput.propTypes = {
-    label: string
+    handleChange: func,
+    label: string,
+    value: string
 };
 
 
