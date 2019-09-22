@@ -4,11 +4,13 @@ import React from 'react';
 // Utils
 
 // Components
+import InitialiseGameForm from '../../components/Forms/InitialiseGameForm/InitialiseGameForm';
 
 // Component
-const Home = () => {
+const Home = ({ history }) => {
     return (
         <main className='home'>
+            <InitialiseGameForm history={history} />
         </main>
     );
 };

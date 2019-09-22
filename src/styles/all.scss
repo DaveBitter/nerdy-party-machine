@@ -13,10 +13,12 @@
 @import 'common/base';
 @import 'common/animations';
 @import 'common/grid';
-@import 'common/buttons';
 @import 'common/forms';
 
 // Pages
 
 // Components
+@import '../components/Button/button';
+@import '../components/FormItems/FormItemInput/form-item-input';
+@import '../components/Forms/InitialiseGameForm/initilise-game-form';
 @import '../components/Loader/loader';
