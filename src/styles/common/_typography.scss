@@ -113,12 +113,13 @@ h6, .h6 {
     margin-bottom: $spacing-xs;
 }
 
-a, .btn-link {
-    color: $color-white;
-    transition: text-decoration-color $transition-timing-med $transition-easing-cubic;
+a {
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    transition: color $transition-timing-med $transition-easing-cubic;
 
     &:hover {
-        text-decoration-color: $color-primary;
+        color: $color-primary-dark;
     }
 }
 
@@ -130,17 +131,4 @@ a, .btn-link {
     &--primary {
         color: $color-primary;
     }
-}
-
-dl {
-    font-size: 95%;
-}
-
-.btn-link {
-    @include text-link();
-    display: block;
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    margin: 0 auto;
 }

@@ -6,6 +6,8 @@ import { AppContext } from '../../static/js/utils/contexts/Context';
 
 
 // Components
+import AnimationWrapper from '../../components/AnimationWrapper/AnimationWrapper';
+import Card from '../../components/Card/Card';
 import GameScore from '../../components/GameScore/GameScore';
 import SumbitEntryForm from '../../components/Forms/SumbitEntryForm/SumbitEntryForm';
 
@@ -18,10 +20,17 @@ const Home = ({ match }) => {
     }, []);
 
     return (
-        <main className='game'>
-            <SumbitEntryForm />
-            <GameScore />
-        </main>
+        <AnimationWrapper element='main' className='game grid'>
+            <section className='section g4'>
+                <Card>
+                    <SumbitEntryForm />
+                </Card>
+            </section>
+
+            <section className='section g4'>
+                <GameScore />
+            </section>
+        </AnimationWrapper>
     );
 };
 

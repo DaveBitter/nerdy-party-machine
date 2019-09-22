@@ -7,11 +7,14 @@ $color-primary-light: lighten($color-primary, 5%);
 $color-white: #fff;
 $color-black: #39393a;
 
-$color-gray-dark: #58636e;
-$color-gray: #8d9297;
-$color-gray-light: #bfc3c7;
-$color-gray-lighter: #e4e5e7;
-$color-gray-lightest: #f4f5f5;
+$color-gray: #f8f4f4;
+
+$color-gray-darker: darken($color-gray, 10%);
+$color-gray-dark: darken($color-gray, 5%);
+
+$color-gray-light: lighten($color-gray, 5%);
+$color-gray-lighter: lighten($color-gray, 10%);
+$color-gray-lightest: lighten($color-gray, 15%);
 
 /* COLOR BASE */
 $color-base: #2f2f2f;

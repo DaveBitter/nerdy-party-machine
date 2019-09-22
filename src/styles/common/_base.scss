@@ -3,11 +3,18 @@ body, #root {
 }
 
 body {
+  background-color: $color-gray;
+
   &.no-scroll {
     overflow: hidden;
   }
 }
 
+main {
+  > section {
+    margin: $spacing-med 0;
+  }
+}
 /*
   This will hide the focus indicator if the element receives focus via the mouse,
   but it will still show up on keyboard focus.

@@ -1,3 +1,43 @@
 .game-score {
+    display: flex;
+    flex-direction: column;
 
+    @include mq($mq-mob--lrg) {
+        flex-direction: row;
+    }
+
+    &__item {
+        text-align: center;
+        margin: $spacing-xs 0;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        @include mq($mq-mob--lrg) {
+            flex: 0.5;
+            margin: 0 $spacing-med;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__heading {
+        font-weight: $font-weight-bold;
+        color: $color-base-lighter;
+    }
+
+    &__value {
+        color: $color-primary;
+    }
 }

@@ -31,7 +31,9 @@ const SumbitEntryForm = () => {
     return (
         <form className='form' onSubmit={handleSubmit}>
             <FormItemInput label='Package name' value={entryValue} handleChange={handleChange} />
-            <Button label='Go!' theme='primary' type='submit' />
+            <div className='button-group'>
+                <Button label='Go!' theme='primary' type='submit' />
+            </div>
         </form>
     );
 };
