@@ -21,10 +21,10 @@ const SumbitEntryForm = () => {
         e.preventDefault();
 
         query(`https://api.npms.io/v2/package/${entryValue}`)
-            .then(({ response }) => {
+            .then(({ response, result }) => {
                 const exists = response.status === 200;
 
-                app.handleGameChoice({ packageName: entryValue, exists });
+                app.handleGameChoice({ packageName: entryValue, meta: result, exists });
                 setEntryValue('');
                 input.current.focus();
             })

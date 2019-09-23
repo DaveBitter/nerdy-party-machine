@@ -4,10 +4,13 @@ $site-header-height-full: 40vh;
 .site-header {
     height: $site-header-height;
     padding: $spacing-med;
+    margin-bottom: $spacing-med;
 
     &--full {
-        height: $site-header-height-full;
-        margin-bottom: $spacing-med;
+        @include mq($mq-tab--lrg) {
+            height: $site-header-height-full;
+            margin-bottom: $spacing-med;
+        }
     }
 
     @include mq($mq-tab--lrg) {
@@ -16,6 +19,14 @@ $site-header-height-full: 40vh;
 
     &__logo-wrapper {
         position: relative;
+        display: inline-block;
+        height: $site-header-height;
+
+        @include mq($mq-tab--lrg) {
+            .site-header--full & {
+                height: $site-header-height-full;
+            }
+        }
 
         a {
             position: absolute;

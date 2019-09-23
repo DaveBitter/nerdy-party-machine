@@ -1,0 +1,49 @@
+.package-metadata {
+    &__meta,
+    &__links {
+        @include text-xs;
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin: 0;
+        list-style: none;
+
+        li {
+            margin: 0 $spacing-xxs;
+            padding-right: $spacing-xs;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+                padding-right: 0;
+                border-right: 0;
+            }
+        }
+    }
+
+    &__meta {
+        padding: $spacing-xs $spacing-sml;
+        border-radius: $border-radius-sml;
+        background-color: $color-gray;
+
+        li {
+            border-right: 1px solid $color-base-lightest;
+        }
+    }
+
+    &__links {
+        display: flex;
+        padding: $spacing-sml 0 0;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__message {
+        margin: $spacing-lrg 0;
+        text-align: center;
+    }
+}

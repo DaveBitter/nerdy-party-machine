@@ -10,7 +10,8 @@ import { AppContext } from '../contexts/Context';
 const initialGameData = { choices: [] };
 
 const initialState = {
-  gameData: initialGameData
+  gameData: initialGameData,
+  lastValidatedChoice: null
 };
 
 class AppProvider extends Component {
@@ -23,7 +24,7 @@ class AppProvider extends Component {
 
   _handleGameChoice(choice) {
     const updatedGameData = { ...this.state.gameData, choices: [...this.state.gameData.choices, choice] };
-    this.setState({ gameData: updatedGameData });
+    this.setState({ gameData: updatedGameData, lastValidatedChoice: choice });
 
     localStorage.setItem(`game:${this.state.gameData.uid}`, JSON.stringify(updatedGameData));
   }
@@ -31,7 +32,7 @@ class AppProvider extends Component {
   _setInitialGameData(uid) {
     const gameData = localStorage.getItem(`game:${uid}`);
 
-    this.setState({ gameData: { ...initialGameData, ...JSON.parse(gameData) } });
+    this.setState({ gameData: { ...initialGameData, ...JSON.parse(gameData) }, lastValidatedChoice: null });
   }
 
   _initGame(history) {

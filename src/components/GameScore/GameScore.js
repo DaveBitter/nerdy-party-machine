@@ -14,9 +14,9 @@ const GameScore = () => {
     const [score, setScore] = useState();
 
     useEffect(() => {
-        const right = gameData.choices.filter(choice => choice.exists).length;
-        setScore({ right, wrong: gameData.choices.length - right });
-    }, [gameData.choices.length]);
+        const exists = gameData.choices.filter(choice => choice.exists).length;
+        setScore({ exists, notExists: gameData.choices.length - exists });
+    }, [gameData.choices]);
 
 
     return (
@@ -24,14 +24,14 @@ const GameScore = () => {
             {score && <AnimationWrapper className='game-score'>
                 <div className='game-score__item'>
                     <Card>
-                        <h2 className='game-score__heading'>Right</h2>
-                        <p className='game-score__value h3'>{score.right}</p>
+                        <h2 className='game-score__heading'>Exists</h2>
+                        <p className='game-score__value h3'>{score.exists}</p>
                     </Card>
                 </div>
                 <div className='game-score__item'>
                     <Card>
-                        <h2 className='game-score__heading'>Wrong</h2>
-                        <p className='game-score__value h3'>{score.wrong}</p>
+                        <h2 className='game-score__heading'>Does not exist</h2>
+                        <p className='game-score__value h3'>{score.notExists}</p>
                     </Card>
                 </div>
             </AnimationWrapper>}

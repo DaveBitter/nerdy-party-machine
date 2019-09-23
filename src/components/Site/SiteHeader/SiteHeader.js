@@ -16,9 +16,11 @@ const SiteHeader = () => {
 
     return (
         <header className={`site-header grid ${fullLogo ? 'site-header--full' : ''}`}>
-            <div className='site-header__logo-wrapper g4'>
-                <span className='site-header__logo'><Logo /></span>
-                <Link to='/'>Home</Link>
+            <div className='g4'>
+                <div className='site-header__logo-wrapper '>
+                    <span className='site-header__logo'><Logo /></span>
+                    <Link to='/'>Home</Link>
+                </div>
             </div>
         </header>
     );
