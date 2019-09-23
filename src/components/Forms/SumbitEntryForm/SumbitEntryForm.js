@@ -13,20 +13,24 @@ import FormItemInput from '../../FormItems/FormItemInput/FormItemInput';
 const SumbitEntryForm = () => {
     const app = useContext(AppContext);
     const [entryValue, setEntryValue] = useState('');
+    const [error, setError] = useState();
     const input = useRef();
 
     useEffect(() => input.current.focus(), []);
 
     const handleSubmit = e => {
         e.preventDefault();
+        setError();
+        setEntryValue('');
+        input.current.focus();
+
+        if (app.gameData.choices.find(choice => choice.packageName === entryValue)) { return setError(`You've already entered this package`); }
 
         query(`https://api.npms.io/v2/package/${entryValue}`)
             .then(({ response, result }) => {
                 const exists = response.status === 200;
 
                 app.handleGameChoice({ packageName: entryValue, meta: result, exists });
-                setEntryValue('');
-                input.current.focus();
             })
             .catch(err => console.error(err));
     };
@@ -36,6 +40,7 @@ const SumbitEntryForm = () => {
     return (
         <form className='form' onSubmit={handleSubmit}>
             <FormItemInput label='Package name' value={entryValue} handleChange={handleChange} ref={input} />
+            {error && <p className='form__error'>{error}</p>}
             <div className='button-group'>
                 <Button label='Go!' theme='primary' type='submit' />
             </div>

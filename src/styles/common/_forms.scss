@@ -53,6 +53,11 @@ $form-input-file-height: $spacing-xxxl;
         }
     }
 
+    &__error {
+        margin-top: 0;
+        color: $color-primary-dark;
+    }
+
     &__footer {
         display: flex;
         justify-content: flex-end;
