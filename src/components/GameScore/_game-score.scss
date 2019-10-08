@@ -1,34 +1,18 @@
 .game-score {
     display: flex;
-    flex-direction: column;
-
-    @include mq($mq-mob--lrg) {
-        flex-direction: row;
-    }
+    justify-content: space-between;
 
     &__item {
+        width: 100%;
+        margin: 0 $spacing-xxs;
         text-align: center;
-        margin: $spacing-xs 0;
 
         &:first-of-type {
-            margin-top: 0;
+            margin-left: 0;
         }
 
         &:last-of-type {
-            margin-bottom: 0;
-        }
-
-        @include mq($mq-mob--lrg) {
-            flex: 0.5;
-            margin: 0 $spacing-med;
-
-            &:first-of-type {
-                margin-left: 0;
-            }
-
-            &:last-of-type {
-                margin-right: 0;
-            }
+            margin-right: 0;
         }
     }
 

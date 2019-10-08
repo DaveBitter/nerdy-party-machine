@@ -22,7 +22,7 @@ const SumbitEntryForm = () => {
         e.preventDefault();
         setError();
         setEntryValue('');
-        input.current.focus();
+        input.current.blur();
 
         if (app.gameData.choices.find(choice => choice.packageName === entryValue)) { return setError(`You've already entered this package`); }
 
@@ -35,7 +35,7 @@ const SumbitEntryForm = () => {
             .catch(err => console.error(err));
     };
 
-    const handleChange = val => setEntryValue(val);
+    const handleChange = val => setEntryValue(val.replace(' ', '-').toLowerCase());
 
     return (
         <form className='form' onSubmit={handleSubmit}>

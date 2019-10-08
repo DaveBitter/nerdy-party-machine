@@ -30,7 +30,7 @@ const GameScore = () => {
                 </div>
                 <div className='game-score__item'>
                     <Card>
-                        <h2 className='game-score__heading'>Does not exist</h2>
+                        <h2 className='game-score__heading'>!Exist</h2>
                         <p className='game-score__value h3'>{score.notExists}</p>
                     </Card>
                 </div>
