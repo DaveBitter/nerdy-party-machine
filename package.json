@@ -51,7 +51,7 @@
     "react": "^16.8.4",
     "react-app-polyfill": "^0.2.0",
     "react-day-picker": "^7.3.2",
-    "react-dev-utils": "^7.0.1",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.8.4",
     "react-event-observer": "^0.5.11",
     "react-router-dom": "^4.3.1",
